@@ -61,7 +61,7 @@ D outputs during training, PatchGAN and feature matching:
 
 ![alt text](image-6.png)
 
-## Observations and what I learned
+## Observations
 
 - No full mode collapse, all classes are generated. But the vanilla MNIST GAN is not balanced: 1, 2 and 4 are rare (4-6% instead of 10%) and 6 is too frequent. On Fashion, shirt is overrepresented and pullover and coat are rare, but the classifier itself mixes up these classes, so this is partly the classifier's fault.
 - In general GAN samples look sharper than VAE samples, but there is no number like NLL or ELBO to check if training is going well, so you have to look at the images and the D outputs all the time.
