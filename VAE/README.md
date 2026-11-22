@@ -75,7 +75,7 @@ This is what each part of the loss would do on its own and together:
 
 A latent dimension counts as active if its average KL is above 0.1. The inactive ones output μ = 0 and σ = 1 for every image, so they carry no information.
 
-## Observations and what I learned
+## Observations
 
 **Latent size is a trade-off.** A bigger latent is always better for reconstruction, so the question is how much compression you can afford. With d = 2 the model only keeps the rough shape and similar digits get mixed up (4s and a 5 were reconstructed as 9s). From d = 16 the reconstructions are close to the originals, and between 32 and 64 there is almost no difference. So for MNIST 16 or 32 dimensions is enough.
 
