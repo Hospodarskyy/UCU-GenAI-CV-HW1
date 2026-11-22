@@ -57,7 +57,7 @@ Inside one FlowStep the masks are:
 
 
 
-## Observations and what I learned
+## Observations
 
 **The tanh ceiling.** This was the most interesting bug. With tanh, one coupling layer can stretch a value at most exp(1) ≈ 2.7 times. After dequantization every black pixel lives in an interval of width 1/256 ≈ 0.004, and to turn that into something that looks like N(0, 1) it has to be stretched about 250 times. With only a few layers the model physically could not do it, which explains both the loss plateau and the bad samples. So I added one more learning parameter - scale. and it's purpose is to scale tanh(s). Without it, tanh keeps s between -1 and 1.
 s = self.scale * torch.tanh(s_from_network)
